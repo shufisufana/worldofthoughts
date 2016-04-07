@@ -71,7 +71,6 @@ function sphereInitBrain( sphereSize, sphereVertices, spriteScale, posX, posY, p
 
    sph.position.set( posX, posY, posZ );
 
-   console.log(scene);
     sphereVec.push( sph );
 
 }

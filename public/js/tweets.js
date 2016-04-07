@@ -1,23 +1,9 @@
-//Javascript will go here
-//var container;
-//var camera, scene, renderer, aspect, cube1, cube2, sphere, plane, light, curve2, geometry, group, sprite;
-//var sphereVec = [];
-
-//var mouseX = 0, mouseY = 0;
-//var lastX = 0, lastY = 0;
-//var mPosX = 0, mPosY = 0;
-//var panelUp = false;
 
 var raycaster;
 var mouse = new THREE.Vector2(-1, -1), INTERSECTED; //initialised vector2 with -1, -1 because the set values would have been 0, 0 which meant the first sphere would've been intersected even if the mouse would be at a different position
 var intersected = false, obj;
 
-//var count = 0;
-//var windowHalfX = window.innerWidth /2;
-//var windowHalfY = window.innerHeight /2;
 
-
-//var uniforms, displacement, noise;
 
 var min, max, increment;
 var lines = [];
@@ -28,10 +14,6 @@ var lineColours = {  angry: 0xb72323,  anxious: 0xE65B22, calm: 0x55E6AD ,  exci
 var hashtagColours  = { angry: '#b72323',  anxious: '#E65B22', calm: '#55E6AD' ,  excited: '#E640B9', happy: '#E6C735' , sad: '#222E78'};
 var sphereVecLines = [];
 var counters = [{ counter: 0, increment: 0.1 }];
-
-//var at;
-
-
 
 
 // TWEENS
@@ -58,9 +40,7 @@ function initT() {
   camera.position.set( 0, 0, 20 );
 
   $('text').remove();
-  //var text = document.createElement( 'div' );
-  //text.id = 'text';
-  //document.body.appendChild( text );
+
   $( '#textTwitter').html( 'But everyone has their own Thought World ');
   $( '#textTwitter' ).animateCss('fadeIn');
 
@@ -171,16 +151,14 @@ for ( var hashtag in hashtags ){
 
          }
 
-        //console.log( positions );
-         //lines.push( { positions: positions, hashtag: hashtag });
+
 
          var curveH = new THREE.CatmullRomCurve3( positions );
          curveH.type = 'chordal';
          //curveH.tension = 0.5;
          geometry = new THREE.Geometry();
          var material = new THREE.LineBasicMaterial( { color: lineColours[ hashtag ]});
-        // geometry.vertices = curveH.getPoints( 300 );
-        //console.log(positions[0]);
+
         var position1 = curveH.getPoint( 0 );
         var position2 = curveH.getPoint( 0.00001 );
         var x1 = position1.x;
@@ -218,13 +196,12 @@ for( var i = 0; i < curves.length; i++ ) {
 
 // circle for tweets
 
-var geometry = new THREE.CircleGeometry( 2.1 , 32 );
+var geometry = new THREE.CircleGeometry( 2.2 , 32 );
 var material  =  new THREE.MeshBasicMaterial( { color: 0x090911 });
 circle = new THREE.Mesh( geometry, material );
-//circle.position.x = camera.position.x;
-//circle.position.y = camera.position.y;
+circle.position.x = camera.position.x;
+circle.position.y = camera.position.y;
 circle.position.z = 1;
-//scene.add( circle );
 circle.scale.set( 0.01, 0.01, 0.01 );
 raycaster = new THREE.Raycaster();
 
@@ -675,7 +652,7 @@ $('#close').on('click', function(){
   at = 'raycaster';
    setTimeout(function () {
        $('#about').css('display', 'none');
-       $('#close').hide();
+
        $('#aboutImg').animateCss('slideInRight');
        $('#aboutImg').css('display', 'block');
 
@@ -694,8 +671,7 @@ $('#close').on('click', function(){
   var intersects = raycaster.intersectObjects( sphereVec );
   if( intersects.length > 0 ){
 
-        console.log( tweets );
-        console.log( sphereVec );
+
        INTERSECTED = intersects[0].object;
 
         $('#tweet').html( tweets[sphereVec.indexOf(INTERSECTED)].text );

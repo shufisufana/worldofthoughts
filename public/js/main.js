@@ -130,11 +130,6 @@ explosionTo.onComplete( function(){
 
   removeSpheres();
 
-  // setTimeout(function () {
-  //   $('text').animateCss('fadeOut');
-//   }, 3000);
-
-
 
   explosionBack.start();
 
@@ -174,13 +169,13 @@ function goodOrEvil() {
              $('#text4').html('MAKE IT SO');
              $('#text4').animateCss('bounceInLeft');
 
-             //at = 'goodOrEvil';
+
              setTimeout(function () {
 
                youMakeItSo.start();
 
 
-                 console.log( sphere );
+
 
                  var spriteMaterial1 = new THREE.SpriteMaterial(
                    {
@@ -193,7 +188,7 @@ function goodOrEvil() {
                   sprite1.scale.set(0.5, 0.5, 0.5);
                   sprite1.position.z = 1.5;
                   sprite1.position.x = -0.35;
-                  console.log( sprite1 );
+
 
                   //sphere = new THREE.Mesh(geo, material);
                   sphere.add(sprite1);

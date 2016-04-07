@@ -123,7 +123,7 @@ canvas {
 #panel {  position: absolute;
           height: 100%;
           width: 18%;
-          left: 40%;
+          left: 41%;
           z-index: 500;
           display: table;
           background-color: rgba( 14, 14 , 41, 0.0);
@@ -145,6 +145,7 @@ canvas {
 
         display: flex;
          border-radius: 50%;
+         text-align: center;
 
 
        }

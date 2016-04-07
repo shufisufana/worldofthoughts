@@ -57,8 +57,6 @@ function loadingScreen2() {
 
 
 
-
-
 function spherePush() {
 
  TWEEN.update();
@@ -150,20 +148,7 @@ function createHeart() {
 
    ]);
    spline.closed = true;
-    //spline.type = 'centripetal';
-   //var material = new THREE.LineBasicMaterial({
-    // color: 0xff00f0,
-   //});
 
-  // var geometry = new THREE.Geometry();
-   //var splinePoints = spline.getPoints( numPoints );
-
-   //for( var i = 0; i < splinePoints.length; i++ ){
-  //   geometry.vertices.push( splinePoints[i] );
-  // }
-
-   //var heart = new THREE.Line( geometry, material );
-  // scene.add( heart );
    counter = 0;
    sphereCounter = 0;
 
@@ -245,25 +230,12 @@ function thoughtCreates(){
     sphereCounter +=1;
 
   }
-  else {    console.log ( sphere.position.x + " " + sphere.position.y );
-            //$('#text').text('Thought destroys');
-
-            //chains
-             //$('#text').animateCss('fadeOut');
-            //moveD.chain( explosionTo );
-          //  explosionTo.chain( explosionBack );
+  else {
           changeAt( 'thought destroys' );
 
 
             moveD.start();
 
-          //  setTimeout(function () {
-
-
-
-
-
-          //  }, 300);
 
   }
 
@@ -275,10 +247,6 @@ function thoughtDestroys() {
 
   TWEEN.update();
 
-
-
-
-//  explosionTo.onComplete
 
 }
 
