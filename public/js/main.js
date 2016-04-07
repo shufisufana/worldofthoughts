@@ -251,8 +251,8 @@ youMakeItSoExit.onComplete( function() {
      brainInit();
 });
 
-init();
-animate();
+//init();
+//animate();
 
 function init() {
 
@@ -309,6 +309,7 @@ function init() {
   // handlers
 
   document.addEventListener( 'mousemove', onDocumentMouseMove, false);
+  document.addEventListener( 'touchstart', onTouch, false);
   window.addEventListener('resize', onWindowResize, false);
   var lastW=0, lastH=0;
 
@@ -325,7 +326,10 @@ function onWindowResize() {
 
    renderer.setSize( window.innerWidth, window.innerHeight );
 
+
+
    if( at == 'raycaster'){
+
     var positions = [];
     var lineCount = 0;
     var sphereCount = 0;
@@ -424,6 +428,13 @@ function onDocumentMouseMove(event) {
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
 
+
+}
+
+function onTouch(event) {
+
+  mouse.x = (event.targetTouches[0] / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.targetTouches[0] / window.innerHeight) * 2 + 1;
 
 }
 

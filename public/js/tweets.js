@@ -25,7 +25,7 @@ var curves = [];
 var lineDots = [];
 
 var lineColours = {  angry: 0xb72323,  anxious: 0xE65B22, calm: 0x55E6AD ,  excited: 0xE640B9, happy: 0xE6C735 , sad: 0x222E78 };
-var hashtagColours  = { angry: '#b72323',  anxious: '#E65B22', calm: '#55E6AD' ,  excited: '#E640B9', happy: '#E6C735' , sad: '#222E78'}
+var hashtagColours  = { angry: '#b72323',  anxious: '#E65B22', calm: '#55E6AD' ,  excited: '#E640B9', happy: '#E6C735' , sad: '#222E78'};
 var sphereVecLines = [];
 var counters = [{ counter: 0, increment: 0.1 }];
 
@@ -208,13 +208,7 @@ for ( var hashtag in hashtags ){
 
 }
 
-// add spheres to the scene
-/*for( var i = 0; i < tweets.length; i++ ) {
 
-    scene.add( sphereVec[i] );
-
-}
-*/
 // add curves to the scene
 for( var i = 0; i < curves.length; i++ ) {
    curves[i].curve.mesh.name = 'curve'+i;
@@ -224,9 +218,11 @@ for( var i = 0; i < curves.length; i++ ) {
 
 // circle for tweets
 
-var geometry = new THREE.CircleGeometry( 2 , 32 );
+var geometry = new THREE.CircleGeometry( 2.1 , 32 );
 var material  =  new THREE.MeshBasicMaterial( { color: 0x090911 });
 circle = new THREE.Mesh( geometry, material );
+//circle.position.x = camera.position.x;
+//circle.position.y = camera.position.y;
 circle.position.z = 1;
 //scene.add( circle );
 circle.scale.set( 0.01, 0.01, 0.01 );
@@ -471,102 +467,6 @@ function twitterSpheresIntro() {
  counter += 0.025;
 
 
-/*  switch( twitterSphere ){
-
-    case 0: twitterSphere = moveTwitterSphere( 0, 0.01 );
-            break;
-
-    case 1: twitterSphere = moveTwitterSphere( 1, 0.0125 );
-            break;
-
-    case 2: twitterSphere = moveTwitterSphere( 2, 0.015 );
-            break;
-
-    case 3: twitterSphere = moveTwitterSphere( 3, 0.0175 );
-            break;
-
-    case 4:
-            restOfSpheres( 4 );
-            break;
-
-    case 5: twitterSphere = moveTwitterSphere( 5, 0.06 );
-            break;
-
-    case 6: twitterSphere = moveTwitterSphere( 6, 0.08 );
-            break;
-
-    case 7: twitterSphere = moveTwitterSphere( 7, 0.09 );
-            break;
-
-    case 8: twitterSphere = moveTwitterSphere( 8, 0.1 );
-            break;
-
-    case 9: twitterSphere = moveTwitterSphere( 9, 0.1 );
-            break;
-
-    case 10: twitterSphere = moveTwitterSphere( 10, 0.1 );
-            break;
-
-    case 11: twitterSphere = moveTwitterSphere( 11, 0.1 );
-            break;
-
-    case 12: twitterSphere = moveTwitterSphere( 12, 0.1 );
-            break;
-
-    case 13: twitterSphere = moveTwitterSphere( 13, 0.1 );
-            break;
-
-    case 14: twitterSphere = moveTwitterSphere( 14, 0.1);
-            break;
-
-    case 15: twitterSphere = moveTwitterSphere( 15, 0.1 );
-            break;
-
-    case 16: twitterSphere = moveTwitterSphere( 16, 0.1 );
-            break;
-
-    case 17: twitterSphere = moveTwitterSphere( 17, 0.1 );
-            break;
-
-    case 18: twitterSphere = moveTwitterSphere( 18, 0.1 );
-            break;
-
-    case 19: twitterSphere = moveTwitterSphere( 19, 0.1 );
-            break;
-
-    case 20: twitterSphere = moveTwitterSphere( 20, 0.1 );
-            break;
-
-    case 21: twitterSphere = moveTwitterSphere( 21, 0.1 );
-            break;
-
-    case 22: twitterSphere = moveTwitterSphere( 22, 0.1 );
-            break;
-
-    case 23: twitterSphere = moveTwitterSphere( 23, 0.1 );
-            break;
-
-    case 24: twitterSphere = moveTwitterSphere( 24, 0.1 );
-            break;
-
-    case 25: twitterSphere = moveTwitterSphere( 25, 0.1 );
-            break;
-
-    case 26: twitterSphere = moveTwitterSphere( 26, 0.1 );
-            break;
-
-    case 27: twitterSphere = moveTwitterSphere( 27, 0.1 );
-            break;
-
-    case 28: twitterSphere = moveTwitterSphere( 28, 0.1 );
-            break;
-
-    case 29: twitterSphere = moveTwitterSphere( 29, 0.1 );
-            break;
-
-    //case 'whatever': at = 'whatever';
-            // break;
-  } */
 }
 
 function moveTwitterSphere( spherePlace, increment ){
@@ -639,6 +539,18 @@ function twitterLinesIntro() {
          circleLarge.start();
          $('#textTwitter').text('What is the world thinking now?');
          $('#textTwitter').animateCss('bounceInDown');
+
+         setTimeout(function () {
+           $('#instructions').animateCss('fadeIn');
+           $('#instructions').css('display', 'block');
+           $('.at4-share-outer-right').animateCss('slideInRight');
+            $('.at4-share-outer-right').css('display', 'block');
+
+          $('#aboutImg').animateCss('slideInRight');
+          $('#aboutImg').css('display', 'block');
+
+         }, 2000);
+
          at = 'raycaster';
     }
 
@@ -748,6 +660,29 @@ function onWindowResize() {
 }
 }
 
+$('#aboutImg').on('click', function(){
+
+  $('#aboutImg').hide();
+  $('#about').css('display', 'block');
+  $('#about').animateCss('flipInX');
+  at = 'pause';
+
+});
+
+$('#close').on('click', function(){
+
+  $('#about').animateCss('flipOutX');
+  at = 'raycaster';
+   setTimeout(function () {
+       $('#about').css('display', 'none');
+       $('#close').hide();
+       $('#aboutImg').animateCss('slideInRight');
+       $('#aboutImg').css('display', 'block');
+
+
+   }, 700);
+
+});
 
 
  function raycasterUpdate() {
@@ -767,6 +702,10 @@ function onWindowResize() {
         $('#hashtag').html( '#'+tweets[sphereVec.indexOf(INTERSECTED)].hashtag);
         $('#hashtag').css( 'color', hashtagColours[ tweets[sphereVec.indexOf(INTERSECTED)].hashtag ] );
 
+        $('#instructions').animateCss('fadeOut');
+        setTimeout(function () {
+          $('#instructions').remove();
+        }, 1001);
 
        if( INTERSECTED.scale.x < 1.5 )
        {

@@ -8,11 +8,19 @@ var tweets = [];
 var hashtag;
 var hashtags = { angry: 0,  anxious: 0, calm: 0,  excited: 0, happy: 0, sad: 0  }; //alphabetically ordered
 
+var connected = false;
+
  socket.on('tweets', function(data){
   //for( var i = 0; i < 10; i++ ){
    //console.log( data );
   //  tweet[i] = data.statuses[i].text;
-    addData(data);
+  if (connected == false ){
+
+      addData(data);
+      connected = true;
+
+  }
+
 
 
   });

@@ -26,15 +26,16 @@ var Detector = {
 
 		var element = document.createElement( 'div' );
 		element.id = 'webgl-error-message';
-		element.style.fontFamily = 'monospace';
-		element.style.fontSize = '13px';
-		element.style.fontWeight = 'normal';
+		element.style.fontFamily = "'Josefin Slab', serif";
+		element.style.fontSize = '3vmin';
+		//element.style.fontWeight = 'normal';
 		element.style.textAlign = 'center';
-		element.style.background = '#fff';
-		element.style.color = '#000';
+		element.style.color = '#fff';
 		element.style.padding = '1.5em';
-		element.style.width = '400px';
-		element.style.margin = '5em auto 0';
+		element.style.width = '60%';
+		element.style.top = '25%';
+		element.style.left = '20%';
+		element.style.backgroundColor = '#1B0D3D';
 
 		if ( ! this.webgl ) {
 

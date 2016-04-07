@@ -4,16 +4,10 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var Twit = require('twit');
 
-var util = require('util');
-var languageDetector = new ( require('languagedetect'));
 
-//app.get('/', function(req, res){
+
   app.use(express.static(__dirname + '/public'));
-//});
 
-//app.get('/', function (req, res) {
-  //res.send(__dirname + '/public2/1.html');
-//});
 
 var T = new Twit({
   consumer_key: 'D2pD6K5LZnV54z6b0I69Of3mL',
@@ -34,6 +28,6 @@ io.on('connection', function(socket){
     });
     });
 
-http.listen(80, function() {
-  console.log('listening on *:80');
+http.listen(3000, function() {
+  console.log('listening on *:3000');
 });

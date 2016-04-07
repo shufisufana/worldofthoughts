@@ -1,8 +1,13 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset = utf-8>
         <title>A World of Thoughts</title>
-
+        <meta name="description" content="What is the world thinking now? An interactive visual experience using WebGL and Twitter API exploring the thoughts of the world.">
+        <meta name="keywords" content="WebGL, three.js, Twitter, API, thoughts, hashtags">
+        <meta name="author" content="Ana Sufana">
+        <link rel="image_src" href="images/preview.jpg" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
         <link rel = "stylesheet" href = "css/animate.css">
         <link rel = "stylesheet" href = "css/start.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans|Josefin+Slab' rel='stylesheet' type='text/css'>
@@ -12,6 +17,7 @@
         <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
         <script src="js/build/Tween.js"></script>
         <script src="js/model/brain-vertex.json"></script>
+        <script src="js/build/Detector.js"></script>
 
         <!-- SHADERS -->
 
@@ -48,6 +54,29 @@
 
        </script>
 
+       <script type = "text/javascript">
+
+       $(window).load(function() {
+         // Animate loader off screen
+        // $(".se-pre-con").fadeOut("slow");
+         init();
+         animate();
+         if(isTouchDevice()===true) {
+              $('#instructions').html('TOUCH SPHERES TO SEE');
+         }
+      });
+
+      function isTouchDevice(){
+        return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
+       }
+
+
+
+       </script>
+
+       <!-- sharing buttons from addthis -->
+       <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5705fdc2f9ef3b50"></script>
+
 
     </head>
     <body>
@@ -65,6 +94,11 @@
      <div id="panel"><div id = "middle"><h1 id="hashtag"></h1><p id="tweet"></p></div></div>
 
      <div id = "skipArea"></div>
+     <div id = "instructions">HOVER OVER THE SPHERES TO SEE</div>
+     <img id = "aboutImg" src="images/about.png" alt="ABout Button"/>
+
+     <div id = "about"> <img id = "close" src="images/close.png" alt = "Close Button"/><p id="titleText">A World of Thoughts</p><p id="information">A WebGL website using Twitter API to explore the thoughts of the world.</p><p id='copy'>	&copy; 2016 Ana Sufana</p></div>
+
      <script type="text/javascript" src="js/loading.js"></script>
      <script type="text/javascript">
 
