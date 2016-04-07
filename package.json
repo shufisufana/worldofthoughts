@@ -1,5 +1,5 @@
 {
-  "name": "World of Thoughts",
+  "name": "wof",
   "version": "0.0.1",
   "description": "A world of thoughts interactive experience using webgl and twitter api",
   "dependencies": {
