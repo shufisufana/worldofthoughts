@@ -1,0 +1,182 @@
+/*@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,400italic,600,600italic|Open+Sans);*/
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: 100%
+}
+
+#text {
+  position: absolute;
+  width: 70%;
+  top: 7%;
+  font-size: 6vmin;
+  line-height: 9vmin;
+  color: #ffffff;
+  left: 15%;
+  text-align: center;
+  font-family: 'Josefin Slab' , serif;
+  -webkit-animation-duration: 1s;
+
+
+}
+
+#textTwitter {
+  position: absolute;
+  width: 70%;
+  top: 7%;
+  font-size: 6vmin;
+  line-height: 9vmin;
+  color: #ffffff;
+  left: 15%;
+  text-align: center;
+  font-family: 'Josefin Slab' , serif;
+  -webkit-animation-duration: 1s;
+
+
+}
+
+#text2 {
+  position: absolute;
+  width: 90%;
+  top: 25%;
+  font-size: 20vmin;
+  color: #ffffff;
+  left: 5%;
+  text-align: center;
+  font-family: 'Josefin Slab' , serif;
+
+  -webkit-animation-duration: 1s;
+
+
+}
+
+#text3 {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  font-size: 8vmin;
+  color: #ffffff;
+  left: 5%;
+  text-align: center;
+  font-family: 'Josefin Slab' , serif;
+  -webkit-animation-duration: 1s;
+
+
+}
+
+#text4 {
+  position: absolute;
+  width: 60%;
+  top: 65%;
+  font-size: 8vmin;
+  color: #ffffff;
+  left: 30%;
+  text-align: center;
+  font-family: 'Josefin Slab' , serif;
+  -webkit-animation-duration: 1s;
+
+
+}
+
+#intro {
+  position: absolute;
+  top: 30%; font-size: 15vmin;
+  line-height: 18vmin;
+  font-family: 'Josefin Slab', serif;
+  color: #ffffff;
+  left: 10%;
+  -webkit-animation-duration: 0.8s;
+  /*-webkit-animation-delay: 0.3s;
+  -webkit-animation-iteration: infinite;*/
+}
+
+#start {
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-delay: 0.5s;
+
+}
+
+#start p {
+  position: relative;
+  left: 47%;
+  width: 6%;
+  font-size: 5vmin;
+  line-height: 8vmin;
+  font-family: 'Josefin Slab', serif;
+  color: #ffffff;
+  text-align: center;
+  -webkit-transition-timing-function: ease-in-out; /* Chrome, Safari, Opera */
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#panel {  position: absolute;
+          height: 100%;
+          width: 18%;
+          left: 41%;
+          z-index: 500;
+          display: table;
+          background-color: rgba( 14, 14 , 41, 0.0);
+          color: #ffffff;
+          font-family: 'Open Sans',sans-serif;
+          font-size: 2vmin;
+          align-items: center;
+          text-align: center;
+          -webkit-animation-duration: 0.6s;
+        }
+
+#middle {
+          display: table-cell;
+          vertical-align: middle;
+        }
+
+#tweet {
+
+        display: flex;
+         border-radius: 50%;
+
+       }
+
+h1 {
+  text-align: center;
+  /*display: flex; */
+  font-size: 4vmin;
+  font-family: 'Josefin Slab', serif;
+  -webkit-animation-duration: 0.3s;
+}
+
+#skipArea {
+
+    position: absolute;
+    z-index: 999;
+
+    width:30%;
+    height: 30%;
+    left: 70%;
+    top: 70%;
+    color: #ffffff;
+    font-family: 'Josefin Slab', serif;
+    font-size: 4vmin;
+
+
+}
+
+#skip {
+  top: 50%;
+  height: 15%;
+  position: relative;
+  width: 50%;
+  left: 50%;
+  cursor: pointer;
+  -webkit-animation-duration: 0.5s;
+}

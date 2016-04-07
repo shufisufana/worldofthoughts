@@ -1,0 +1,10 @@
+{
+  "name": "World of Thoughts",
+  "version": "0.0.1",
+  "description": "A world of thoughts interactive experience using webgl and twitter api",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.4.5",
+    "twit": "^2.2.3"
+  }
+}
